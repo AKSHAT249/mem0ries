@@ -7,7 +7,11 @@ import {toast} from "react-hot-toast"
 import { useDispatch } from "react-redux";
 import { deletePost } from "../../../store/slices/postSlice";
 
-const url = "http://localhost:5000/posts";
+// const url = "http://localhost:5000/posts";
+const url = "https://mem0ries-2.onrender.com/posts";
+
+
+
 
 
 const Post = ({post, setCurrentId}) => {
@@ -31,17 +35,17 @@ const Post = ({post, setCurrentId}) => {
 
 
   return(
-    <Box boxShadow={3} sx={{borderRadius:"10px", padding:"16px"}}>
+    <Box boxShadow={3} sx={{borderRadius:"10px", padding:"16px", pointer:"cursor"}}>
       <Grid container  sx={{display:"flex", flexDirection:"column", alignItems:"flex-start", flexWrap:"wrap", gap:"10px"}}>
         <Grid item  lg={12} sx={{display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"center", padding:"16px"}}>
           <img src={post.selectedFile} width="200px"    />
         </Grid>
-        <Grid item sx={{display:"flex", flexDirection:"row", gap:"20px", paddingLeft:"16px"}} >
+        <Grid item sx={{display:"flex", flexDirection:"row", gap:"10px", paddingLeft:"16px"}} >
           {
             tags.map( (tag, index) => {
               return(
                 <div key={index}>
-                <p key={tag} style={{fontSize:"16px", color:"#758694"}} >#{tag}</p>
+                  <p key={tag} style={{fontSize:"16px", color:"#758694"}} >#{tag}</p>
                 </div>
               )
             })

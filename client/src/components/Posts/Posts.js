@@ -18,7 +18,7 @@ const Posts = ({setCurrentId}) => {
 
   useEffect( () => {
     const fetchPosts = async () => {
-      const response = await axios.get("http://localhost:5000/posts/");
+      const response = await axios.get("https://mem0ries-2.onrender.com/posts");
       // console.log("response", response);
       // setAllPosts(response.data);
       const data =  response.data;

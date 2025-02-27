@@ -8,10 +8,11 @@ import axios from "axios";
 import { toast } from 'react-hot-toast';
 
 
-const url = "http://localhost:5000/posts";
+// const url = "http://localhost:5000/posts";
+const url = "https://mem0ries-2.onrender.com/posts";
 
 
-const Form = ({currentId}) => {
+const Form = ({currentId, setCurrentId}) => {
 
   console.log("currentIdForm", currentId);
   const post = useSelector( (state) => currentId? state.postSlice.find((p) => p._id === currentId) : null);
@@ -125,6 +126,7 @@ const Form = ({currentId}) => {
       selectedFile:""
     });
     document.getElementById("file-input").value = "";
+    setCurrentId(null);
     
 
   }
